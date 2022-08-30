@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+.navbar {
+  margin-bottom: 20px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #ddd;
+
+  a {
+    font-family: "Open Sans";
+    float: right;
+    color: black;
+    margin-right: 8px;
+    text-decoration: none;
+  }
+}
+a:hover {
+  color: #ffcc15;
+}
