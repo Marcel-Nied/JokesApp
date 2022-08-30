@@ -1,27 +1,56 @@
 <button
-  routerLink="/dashboard"
-  pButton
-  type="button"
-  label="Wstecz"
-  class="p-button-warning"
-></button>
-
-<button
   pButton
   type="button"
   label="Dodaj"
   (click)="showDialog()"
   class="p-button-warning"
 ></button>
-<p-dialog
-  class="dialog-body"
-  header="Dialog Window"
-  [(visible)]="displayDialog"
-  [style]="{ width: '50vw', height: '50vw' }"
-  [baseZIndex]="10000"
->
-  <div class="dialog-content">
-    <p-dropdown class="dialog-dropdown"></p-dropdown>
-    <input type="text" pInputText class="p-inputtext-m" />
-  </div>
-</p-dialog>
+<div class="dialog-window">
+  <p-dialog
+    class="dialog-body"
+    header="Dodawanie zartów"
+    [(visible)]="displayDialog"
+    [style]="{ width: '60vw', height: '40vw' }"
+    [baseZIndex]="10000"
+  >
+    <div class="dialog-content">
+      <div>
+        <p-dropdown class="dialog-dropdown"></p-dropdown>
+      </div>
+      <div>
+        <input
+          id="joke-input"
+          type="text"
+          pInputText
+          class="p-inputtext-m"
+          placeholder="Wprowadź treść zartu"
+        />
+      </div>
+    </div>
+    <div class="buttons">
+      <div>
+        <button
+          pButton
+          type="button"
+          label="Anuluj"
+          class="p-button-warning-1"
+        ></button>
+      </div>
+      <div>
+        <button
+          pButton
+          type="button"
+          label="Dodaj"
+          class="p-button-warning"
+        ></button>
+      </div>
+    </div>
+  </p-dialog>
+</div>
+<button
+  pButton
+  type="button"
+  label="Pokaz następny"
+  class="p-button-warning"
+></button>
+<app-joke></app-joke>

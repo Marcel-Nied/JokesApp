@@ -1,4 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .navbar {
+  margin-top: 20px;
   margin-bottom: 20px;
   padding-bottom: 32px;
   border-bottom: 1px solid #ddd;

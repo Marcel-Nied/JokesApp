@@ -15,6 +15,7 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
+import { JokeComponent } from './joke/joke.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { InputTextModule } from 'primeng/inputtext';
     DashboardComponent,
     JokesComponent,
     MainJokesComponent,
+    JokeComponent,
   ],
   imports: [
     BrowserModule,

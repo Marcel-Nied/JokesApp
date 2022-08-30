@@ -9,4 +9,8 @@ export class MainJokesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  showDialog() {
+    console.log('click');
+  }
 }

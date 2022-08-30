@@ -1,13 +1,32 @@
-.dialog-content {
-  display: grid;
+.p-inputtext-m {
+  // position: absolute;
+  width: 100%;
+  // height: fit-content;
+  margin-top: 1rem;
+  // min-height: 20vh;
 }
 
-.p-inputtext-m {
-  width: max-content;
-  height: max-content;
-}
 .p-button-warning {
   color: black;
   background-color: #ffcc15;
   border: #ffcc15;
+  margin-top: 10px;
+}
+.p-button-warning-1 {
+  background-color: white;
+  color: #ffcc15;
+  border: #ffcc15;
+  margin-top: 10px;
+}
+.p-button-warning-1:hover {
+  background-color: white;
+  color: black;
+}
+
+.dialog-window {
+  background-color: pink;
+}
+
+.buttons {
+  display: flex;
 }
