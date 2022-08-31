@@ -1,5 +1,11 @@
 .p-button-warning {
   color: black;
-  background-color: #ffcc15;
+  background-color: hsl(47, 100%, 54%);
   border: #ffcc15;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

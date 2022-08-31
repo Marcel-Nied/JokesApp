@@ -1,23 +1,17 @@
-.p-inputtext-m {
-  // position: absolute;
-  width: 100%;
-  // height: fit-content;
-  margin-top: 1rem;
-  // min-height: 20vh;
-}
-
 .p-button-warning {
   color: black;
   background-color: #ffcc15;
   border: #ffcc15;
   margin-top: 10px;
 }
+
 .p-button-warning-1 {
   background-color: white;
   color: #ffcc15;
   border: #ffcc15;
   margin-top: 10px;
 }
+
 .p-button-warning-1:hover {
   background-color: white;
   color: black;
@@ -28,5 +22,23 @@
 }
 
 .buttons {
-  display: flex;
+  text-align: right;
+}
+
+.p-card1 {
+  width: 50vh;
+  height: 40vh;
+}
+
+.joke-card {
+  text-align: -webkit-center;
+  margin-top: 2rem;
+}
+
+.jokes-window {
+  text-align: -webkit-center;
+}
+
+.dialog-input {
+  margin-top: 0.5rem;
 }
