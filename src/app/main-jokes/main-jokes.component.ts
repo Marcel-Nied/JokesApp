@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceAppService } from '../service-app.service';
 
 @Component({
   selector: 'app-main-jokes',
@@ -6,11 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-jokes.component.scss'],
 })
 export class MainJokesComponent implements OnInit {
-  constructor() {}
+  displayDialog: boolean = false;
+  constructor(public serviceJoke: ServiceAppService) {}
 
   ngOnInit(): void {}
 
   showDialog() {
     console.log('click');
+  }
+
+  showDeletingDialog() {
+    this.displayDialog = true;
   }
 }

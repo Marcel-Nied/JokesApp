@@ -7,7 +7,7 @@ import { Joke } from './interfaces';
   providedIn: 'root',
 })
 export class ServiceAppService {
-  joke!: Joke;
+  joke: Joke = { id: 1, type: '', setup: '', punchline: '' };
 
   constructor(private http: HttpClient) {}
 

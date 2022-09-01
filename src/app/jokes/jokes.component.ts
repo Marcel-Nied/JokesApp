@@ -10,14 +10,14 @@ export class JokesComponent implements OnInit {
   displayDialog: boolean = false;
   autoResize: boolean = true;
 
-  constructor(public jokeService: ServiceAppService) {}
+  constructor(public serviceJoke: ServiceAppService) {}
 
   ngOnInit() {
     this.getJokes();
   }
 
   getJokes() {
-    this.jokeService.getJokeFromApi().subscribe();
+    this.serviceJoke.getJokeFromApi().subscribe();
   }
 
   showDialog() {

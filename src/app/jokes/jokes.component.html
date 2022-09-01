@@ -13,6 +13,7 @@
         [(visible)]="displayDialog"
         [style]="{ width: '50vw', height: '40vw' }"
         [baseZIndex]="10000"
+        [modal]="true"
       >
         <div class="dialog-dropdown">
           <p-dropdown [style]="{ width: '100%' }"></p-dropdown>
@@ -22,11 +23,9 @@
             placeholder="Wprowadź treść zartu"
             [rows]="5"
             [cols]="30"
-            class="p-inputtext-lg"
+            class="p-inputtext-m"
             pInputTextarea
             type="text"
-            [autoResize]="autoResize"
-            [style]="{ width: '100%', height: '100px' }"
           ></textarea>
         </div>
         <div class="buttons">
@@ -47,16 +46,16 @@
       </p-dialog>
     </div>
     <div class="joke-card">
-      <p-card
-        header="Karta zartu"
-        [style]="{ width: '25rem', 'margin-bottom': '2em' }"
-      >
-        <p>
-          {{ jokeService.joke.setup }}
-        </p>
-        <p>
-          {{ jokeService.joke.punchline }}
-        </p>
+      <p-card [style]="{ width: '25rem', 'margin-bottom': '2em' }">
+        <div class="inside-card">
+          <div>
+            <h5>Kategoria: {{ serviceJoke.joke.type }}</h5>
+          </div>
+          <div>
+            <p>{{ serviceJoke.joke.setup }}</p>
+            <p>{{ serviceJoke.joke.punchline }}</p>
+          </div>
+        </div>
       </p-card>
     </div>
     <button
