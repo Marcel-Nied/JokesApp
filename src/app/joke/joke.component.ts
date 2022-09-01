@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceAppService } from '../service-app.service';
 
 @Component({
   selector: 'app-joke',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./joke.component.scss'],
 })
 export class JokeComponent implements OnInit {
-  constructor() {}
+  constructor(public serviceJoke: ServiceAppService) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 }

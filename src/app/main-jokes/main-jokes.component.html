@@ -1,57 +1,61 @@
-<button
-  pButton
-  type="button"
-  label="Dodaj"
-  class="p-button-warning"
-  (click)="showDialog()"
-></button>
-<div class="joke-card">
-  <p-card
-    aria-disabled="true"
-    header="Karta zartu"
-    [style]="{ width: '25rem', 'margin-bottom': '2em' }"
-  >
-    <h5>Kategoria: {{ serviceJoke.joke.type }}</h5>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
-      consequuntur error repudiandae numquam deserunt quisquam repellat libero
-      asperiores earum nam nobis, culpa ratione quam perferendis esse,
-      cupiditate neque quas!
-    </p>
-    <div class="detele-button">
-      <button
-        pButton
-        type="button"
-        label="Usuń"
-        class="p-button-danger"
-        (click)="showDeletingDialog()"
-      ></button>
-      <p-dialog
-        header="Potwierdzenie"
-        [(visible)]="displayDialog"
-        [modal]="true"
-        [style]="{ width: '40vw', height: '20vw' }"
-        [draggable]="false"
-        [resizable]="false"
-      >
-        <div class="delating-box">
-          <p>Czy napewno chcesz usunąć wybrany zart?</p>
-        </div>
-        <ng-template pTemplate="footer">
-          <button
-            pButton
-            type="button"
-            label="Nie"
-            class="p-button-warning-1"
-          ></button>
-          <button
-            pButton
-            type="button"
-            label="Tak"
-            class="p-button-warning"
-          ></button>
-        </ng-template>
-      </p-dialog>
-    </div>
-  </p-card>
+<div class="main-joke-window">
+  <div>
+    <button
+      pButton
+      type="button"
+      label="Dodaj"
+      class="p-button-warning"
+      (click)="showDialog()"
+    ></button>
+  </div>
+  <div class="joke-card">
+    <p-card
+      aria-disabled="true"
+      header="Karta zartu"
+      [style]="{ width: '25rem', 'margin-bottom': '2em' }"
+    >
+      <h5>Kategoria:??</h5>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
+        consequuntur error repudiandae numquam deserunt quisquam repellat libero
+        asperiores earum nam nobis, culpa ratione quam perferendis esse,
+        cupiditate neque quas!
+      </p>
+      <div class="detele-button">
+        <button
+          pButton
+          type="button"
+          label="Usuń"
+          class="p-button-danger"
+          (click)="showDeletingDialog()"
+        ></button>
+        <p-dialog
+          header="Potwierdzenie"
+          [(visible)]="displayDialog"
+          [modal]="true"
+          [style]="{ width: '40vw', height: '20vw' }"
+          [draggable]="false"
+          [resizable]="false"
+        >
+          <div class="delating-box">
+            <p>Czy napewno chcesz usunąć wybrany zart?</p>
+          </div>
+          <ng-template pTemplate="footer">
+            <button
+              pButton
+              type="button"
+              label="Nie"
+              class="p-button-warning-1"
+            ></button>
+            <button
+              pButton
+              type="button"
+              label="Tak"
+              class="p-button-warning"
+            ></button>
+          </ng-template>
+        </p-dialog>
+      </div>
+    </p-card>
+  </div>
 </div>

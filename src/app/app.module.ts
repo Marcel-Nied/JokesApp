@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { JokesComponent } from './jokes/jokes.component';
 import { MainJokesComponent } from './main-jokes/main-jokes.component';
+import { AddidngJokeComponent } from './addidng-joke/addidng-joke.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MainJokesComponent } from './main-jokes/main-jokes.component';
     JokesComponent,
     MainJokesComponent,
     JokeComponent,
+    AddidngJokeComponent,
   ],
   imports: [
     BrowserModule,

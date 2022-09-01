@@ -45,19 +45,7 @@
         </div>
       </p-dialog>
     </div>
-    <div class="joke-card">
-      <p-card [style]="{ width: '25rem', 'margin-bottom': '2em' }">
-        <div class="inside-card">
-          <div>
-            <h5>Kategoria: {{ serviceJoke.joke.type }}</h5>
-          </div>
-          <div>
-            <p>{{ serviceJoke.joke.setup }}</p>
-            <p>{{ serviceJoke.joke.punchline }}</p>
-          </div>
-        </div>
-      </p-card>
-    </div>
+    <app-joke></app-joke>
     <button
       pButton
       type="button"

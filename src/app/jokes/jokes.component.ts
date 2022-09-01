@@ -8,7 +8,6 @@ import { ServiceAppService } from '../service-app.service';
 })
 export class JokesComponent implements OnInit {
   displayDialog: boolean = false;
-  autoResize: boolean = true;
 
   constructor(public serviceJoke: ServiceAppService) {}
 
