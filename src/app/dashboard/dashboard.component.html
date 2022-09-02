@@ -1,1 +1,6 @@
-<h1>Dashboard Component</h1>
+<h1>Strona Główna</h1>
+<div *ngFor="let mockedJoke of serviceJoke.mockedJokes">
+  <a>
+    {{ mockedJoke.id }}
+  </a>
+</div>

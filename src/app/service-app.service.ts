@@ -1,13 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
-import { Joke } from './interfaces';
+import { Joke, MockedJoke } from './interfaces';
+import { mockedJokes } from './mocked-data';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ServiceAppService {
   joke: Joke = { id: 1, type: '', setup: '', punchline: '' };
+  mockedJokes: MockedJoke[] = mockedJokes;
 
   constructor(private http: HttpClient) {}
 

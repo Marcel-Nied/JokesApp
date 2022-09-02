@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ServiceAppService } from '../service-app.service';
 
 @Component({
@@ -6,17 +6,6 @@ import { ServiceAppService } from '../service-app.service';
   templateUrl: './main-jokes.component.html',
   styleUrls: ['./main-jokes.component.scss'],
 })
-export class MainJokesComponent implements OnInit {
-  displayDialog: boolean = false;
+export class MainJokesComponent {
   constructor(public serviceJoke: ServiceAppService) {}
-
-  ngOnInit(): void {}
-
-  showDialog() {
-    console.log('click');
-  }
-
-  showDeletingDialog() {
-    this.displayDialog = true;
-  }
 }
