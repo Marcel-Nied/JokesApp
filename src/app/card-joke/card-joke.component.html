@@ -1,23 +1,22 @@
-<div class="joke-card">
+<div
+  *ngFor="let joke of serviceJoke.createdJokes; index as i"
+  class="joke-card"
+>
   <p-card
     aria-disabled="true"
     header="Karta żartu"
     [style]="{ width: '25rem', 'margin-bottom': '2em' }"
   >
-    <h5>Kategoria:??</h5>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed
-      consequuntur error repudiandae numquam deserunt quisquam repellat libero
-      asperiores earum nam nobis, culpa ratione quam perferendis esse,
-      cupiditate neque quas!
-    </p>
+    <h5>Kategoria: {{ joke.category }}</h5>
+    <p>{{ joke.content }}</p>
+
     <div class="detele-button">
       <button
         pButton
         type="button"
         label="Usuń"
         class="p-button-danger"
-        (click)="showDeletingDialog()"
+        (click)="showDeletingDialog(joke.id)"
       ></button>
       <p-dialog
         header="Potwierdzenie"
@@ -42,7 +41,7 @@
             pButton
             type="button"
             label="Tak"
-            (click)="deleteJoke()"
+            (click)="deleteJoke(selectedJokeId)"
             class="p-button-warning"
           ></button>
         </ng-template>

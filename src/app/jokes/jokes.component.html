@@ -1,57 +1,21 @@
 <ng-container>
-  <app-addidng-joke></app-addidng-joke>
   <div class="jokes-window">
     <button
       pButton
       type="button"
       label="Dodaj"
-      (click)="showDialog()"
+      (click)="serviceJoke.showDialog()"
       class="p-button-warning"
     ></button>
-    <div class="dialog-window">
-      <p-dialog
-        header="Dodawanie żartów"
-        [(visible)]="displayDialog"
-        [style]="{ width: '50vw', height: '40vw' }"
-        [baseZIndex]="10000"
-        [modal]="true"
-      >
-        <div class="dialog-dropdown">
-          <p-dropdown [style]="{ width: '100%' }"></p-dropdown>
-        </div>
-        <div class="dialog-input">
-          <textarea
-            placeholder="Wprowadź treść żartu"
-            [rows]="5"
-            [cols]="30"
-            class="p-inputtext-m"
-            pInputTextarea
-            type="text"
-          ></textarea>
-        </div>
-        <div class="buttons">
-          <button
-            pButton
-            type="button"
-            label="Anuluj"
-            (click)="closeDialog()"
-            class="p-button-warning-1"
-          ></button>
-          <button
-            pButton
-            type="button"
-            label="Dodaj"
-            class="p-button-warning"
-          ></button>
-        </div>
-      </p-dialog>
-    </div>
+    <p-toast position="top-right"> </p-toast>
+
+    <app-addidng-joke></app-addidng-joke>
     <app-joke></app-joke>
     <button
       pButton
       type="button"
-      (click)="refreshJoke()"
       label="Pokaż następny"
+      (click)="serviceJoke.showNextJoke()"
       class="p-button-warning"
     ></button>
   </div>

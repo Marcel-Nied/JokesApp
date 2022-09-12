@@ -21,6 +21,11 @@ import { MainJokesComponent } from './main-jokes/main-jokes.component';
 import { AddidngJokeComponent } from './addidng-joke/addidng-joke.component';
 import { CardJokeComponent } from './card-joke/card-joke.component';
 
+import { ToastModule } from 'primeng/toast';
+
+import { FormsModule } from '@angular/forms';
+import { MessageService } from 'primeng/api';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,8 +50,10 @@ import { CardJokeComponent } from './card-joke/card-joke.component';
     CardModule,
     InputTextareaModule,
     HttpClientModule,
+    FormsModule,
+    ToastModule,
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

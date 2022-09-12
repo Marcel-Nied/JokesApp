@@ -16,3 +16,9 @@ export interface Category {
   code: string;
   name: string;
 }
+
+export interface CreatedJoke {
+  category: string;
+  content: string;
+  id: number;
+}

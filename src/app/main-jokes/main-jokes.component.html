@@ -4,8 +4,13 @@
       pButton
       type="button"
       label="Dodaj"
+      (click)="serviceJoke.showDialog()"
       class="p-button-warning"
     ></button>
+
+    <p-toast position="top-right"> </p-toast>
+
+    <app-addidng-joke></app-addidng-joke>
   </div>
-  <app-card-joke></app-card-joke>
+  <app-card-joke> </app-card-joke>
 </div>

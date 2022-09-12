@@ -67,7 +67,7 @@ export const mockedJokes: MockedJoke[] = [
   },
 ];
 
-export const categories: Category[] = [
+export const mockedCategories: Category[] = [
   {
     id: 'b99be362-7044-4bca-aed2-e734f7999e5e',
     code: 'IT',

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Category, MockedJoke } from '../interfaces';
+import { mockedCategories } from '../mocked-data';
 import { ServiceAppService } from '../service-app.service';
 
 @Component({
@@ -7,28 +9,21 @@ import { ServiceAppService } from '../service-app.service';
   styleUrls: ['./jokes.component.scss'],
 })
 export class JokesComponent implements OnInit {
-  displayDialog: boolean = false;
+  selectedJoke: MockedJoke = { id: '', category: 'mjnkl', content: '' };
+
+  mockedCategories: Category[] = mockedCategories;
 
   constructor(public serviceJoke: ServiceAppService) {}
 
   ngOnInit() {
-    this.getJokes();
+    this.getJokesFromMockedData();
   }
 
-  getJokes() {
-    this.serviceJoke.getJokeFromApi().subscribe();
-  }
+  // getJokes() {
+  //   this.serviceJoke.getJokeFromApi().subscribe();
+  // }
 
-  showDialog() {
-    this.displayDialog = true;
-    console.log('click');
-  }
-
-  closeDialog() {
-    this.displayDialog = false;
-  }
-
-  refreshJoke() {
-    this.getJokes();
+  getJokesFromMockedData() {
+    this.serviceJoke.changeCategoryName();
   }
 }
