@@ -18,7 +18,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { JokesComponent } from './jokes/jokes.component';
 import { MainJokesComponent } from './main-jokes/main-jokes.component';
-import { AddidngJokeComponent } from './addidng-joke/addidng-joke.component';
+import { AddingJokeComponent } from './adding-joke/adding-joke.component';
 import { CardJokeComponent } from './card-joke/card-joke.component';
 
 import { ToastModule } from 'primeng/toast';
@@ -33,7 +33,7 @@ import { MessageService } from 'primeng/api';
     JokesComponent,
     MainJokesComponent,
     JokeComponent,
-    AddidngJokeComponent,
+    AddingJokeComponent,
     CardJokeComponent,
   ],
   imports: [

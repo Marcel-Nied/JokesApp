@@ -1,26 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { Category, CreatedJoke, Joke, MockedJoke } from './interfaces';
+import { Category, CreatedJoke, MockedJoke } from './interfaces';
 import { mockedCategories, mockedJokes } from './mocked-data';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ServiceAppService {
-  joke: Joke = { id: 1, type: '', setup: '', punchline: '' };
   mockedJokes: MockedJoke[] = mockedJokes;
   mockedCategories: Category[] = mockedCategories;
 
-  i: number = 0;
+  jokeCounter: number = 0;
   isJokeExist: boolean = true;
-  newJokeTxt: string = '';
-
-  coswpisuje: string = '';
   displayDialog: boolean = false;
 
   createdJoke: CreatedJoke = { category: '', content: '', id: 0 };
   createdJokes: CreatedJoke[] = [];
+
+  selectedCategory!: string;
 
   constructor(
     private http: HttpClient,
@@ -65,13 +63,12 @@ export class ServiceAppService {
     return this.mockedJokes;
   }
 
-  showNextJoke(): any {
-    if (this.mockedJokes.length - 1 > this.i) {
-      this.i++;
-    } else {
-      this.showNoJokes();
-      return (this.isJokeExist = false);
-    }
+  showDialog() {
+    this.displayDialog = true;
+  }
+
+  closeDialog() {
+    this.displayDialog = false;
   }
 
   selectCategory(event: any) {
@@ -86,7 +83,7 @@ export class ServiceAppService {
     });
   }
 
-  showwAddedJokes() {
+  showAddedJokes() {
     this.messageService.add({
       severity: 'success',
       summary: 'Gratulacje',
@@ -94,23 +91,26 @@ export class ServiceAppService {
     });
   }
 
+  showNextJoke(): any {
+    if (this.mockedJokes.length - 1 > this.jokeCounter) {
+      this.jokeCounter++;
+    } else {
+      this.jokeCounter = 0;
+      this.showNoJokes();
+      return (this.isJokeExist = false);
+    }
+  }
+
   addJoke() {
-    this.i++;
+    this.jokeCounter++;
     this.createdJokes.push({
       category: this.createdJoke.category,
       content: this.createdJoke.content,
-      id: this.i,
+      id: this.jokeCounter,
     });
-    this.showwAddedJokes();
-    console.log('this.createdJokes', this.createdJokes);
+    this.showAddedJokes();
     this.closeDialog();
-  }
-
-  showDialog() {
-    this.displayDialog = true;
-  }
-
-  closeDialog() {
-    this.displayDialog = false;
+    this.createdJoke.content = '';
+    this.selectedCategory = '';
   }
 }

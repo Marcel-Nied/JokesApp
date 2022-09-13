@@ -1,13 +1,13 @@
 <div class="joke-card">
   <p-card [style]="{ width: '25rem', 'margin-bottom': '2em' }">
     <div>
-      <div class="category">
-        <h5>
-          Kategoria: {{ serviceJoke.mockedJokes[serviceJoke.i].category }}
-        </h5>
-      </div>
+      <div class="category"></div>
       <div *ngIf="serviceJoke.isJokeExist; else noJoke">
-        {{ serviceJoke.mockedJokes[serviceJoke.i].content }}
+        <h5>
+          Kategoria:
+          {{ serviceJoke.mockedJokes[serviceJoke.jokeCounter].category }}
+        </h5>
+        {{ serviceJoke.mockedJokes[serviceJoke.jokeCounter].content }}
       </div>
       <ng-template #noJoke>
         <p-toast position="top-right"> </p-toast>

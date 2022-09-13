@@ -1,0 +1,51 @@
+<div class="dialog-window">
+  <p-dialog
+    header="Dodawanie żartu"
+    [(visible)]="serviceJoke.displayDialog"
+    [style]="{ width: '50vw', height: '100%' }"
+    [baseZIndex]="10000"
+    [modal]="true"
+  >
+    <div class="dialog-dropdown">
+      <p-dropdown
+        id="drop"
+        optionLabel="name"
+        placeholder="Wybierz kategorię"
+        [options]="serviceJoke.mockedCategories"
+        (onChange)="serviceJoke.selectCategory($event)"
+        [(ngModel)]="serviceJoke.selectedCategory"
+        [style]="{ width: '100%' }"
+        optionDisabled="inactive"
+      ></p-dropdown>
+    </div>
+    <div class="dialog-input">
+      <textarea
+        class="p-inputtext-m"
+        placeholder="Wprowadź treść żartu"
+        [rows]="5"
+        [cols]="30"
+        aria-valuetext=""
+        [(ngModel)]="serviceJoke.createdJoke.content"
+        pInputTextarea
+        type="text"
+      ></textarea>
+    </div>
+
+    <div class="buttons">
+      <button
+        class="p-button-warning-1"
+        pButton
+        type="button"
+        label="Anuluj"
+        (click)="serviceJoke.closeDialog()"
+      ></button>
+      <button
+        class="p-button-warning"
+        pButton
+        type="button"
+        label="Dodaj"
+        (click)="serviceJoke.addJoke()"
+      ></button>
+    </div>
+  </p-dialog>
+</div>
